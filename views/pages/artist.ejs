@@ -1,0 +1,26 @@
+<%- include('../partials/header'); %>
+
+<main class="main" id="artistMain">
+    <div class="container">
+        <div class="row">
+            <% data.forEach(item => { %>
+                <div class="col-md-4">
+                    <figure class="figure artist-figure">
+                        <img src="/images/<%= item.imgUrl %>" alt="image of <%= item.fName %>" class="img-fluid image" />
+                        <figcaption class="figure-caption artist-caption">
+                            <a href="/artist/<%= item.artist_id %>">
+                                <% if (item.alias == null) { %>
+                                    <%= item.fName %> <%= item.lName %>
+                                <% } else { %>
+                                    <%= item.alias %>
+                                <% } %>
+                            </a>
+                        </figcaption>
+                    </figure>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+</main>
+
+<%- include('../partials/footer'); %>

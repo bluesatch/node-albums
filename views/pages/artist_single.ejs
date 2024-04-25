@@ -1,0 +1,27 @@
+<%- include('../partials/header'); %>
+
+<main class="main" id="artistSingleMain">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="/images/<%= data[0].imgUrl %>" alt="" class="img-fluid" />
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <% data.forEach(item => { %>
+                        <div class="col-sm-4">
+                            <figure class="figure artist-single-figure">
+                                <img src="/images/<%= item.album_cover %>" alt="image of <%= item.album_cover %>" class="img-fluid" />
+                                <figcaption class="figure-caption">
+                                    <%= item.title %> | <%= item.yr_released %>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    <% }) %>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<%- include('../partials/footer'); %>
