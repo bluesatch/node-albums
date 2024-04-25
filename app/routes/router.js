@@ -95,6 +95,22 @@ router.get('/artist/:id', (req, res)=> {
         })
 })
 
+router.get('/band/:id', (req, res)=> {
+    const id = req.params.id
+    const url = `http://localhost:${port}/api/band/${id}`
+
+    fetch(url)
+        .then(res => res.json())
+        .then(data => {
+            const band = data[0].band
+            res.render('pages/band_single', {
+                title: band,
+                name: band,
+                data
+            })
+        })
+})
+
 // Error Page 
 router.get('*', (req, res)=> {
     if (req.url === '/favicon.ico/') {
