@@ -11,19 +11,10 @@ const daoCommon = require('./common/daoCommon')
  * artistDao= {findAll(), findById(), countAll(), table, getInfo(),...}
  */
 
+const artistDao = { ...daoCommon, ...require('./api/artistDao') }
 
+const bandDao = { ...daoCommon, ...require('./api/bandDao') }
 
-const artistDao = {
-    ...daoCommon,
-    ...require('./api/artistDao')
-}
+const albumDao = { ...daoCommon, ...require('./api/albumDao') }
 
-const bandDao = {
-    ...daoCommon,
-    ...require('./api/bandDao')
-}
-
-module.exports = {
-    artistDao,
-    bandDao
-}
+module.exports = { artistDao, bandDao, albumDao }
