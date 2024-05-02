@@ -1,0 +1,42 @@
+<%- include('../partials/header'); %>
+
+<main class="main" id="albumSingleMain">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="h2-heading"><%= data.title %></h2>
+                <img 
+                    src="/images/<%= data.album_cover %>" 
+                    alt="<%= data.title %>" 
+                    class="img-fluid album-single-img rounded" 
+                />
+            </div>
+            <div class="col-md-6">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <% if (data.band == '') { %>
+                            <a href="/artist/<%= data.artist_id %>">
+                                <% if (data.alias == '') { %>
+                                    <%= data.fName %> <%= data.lName %>
+                                <% } else { %>
+                                    <%= data.alias %>
+                                <% } %>
+                            </a>
+                        <% } else { %>
+                            <a href="/band/<%= data.band_id %>">
+                                <%= data.band %>
+                            </a>
+                        <% } %>
+                    </li>
+                    <li class="list-group-item">
+                        <%= data.yr_released %>
+                    </li>
+                    <li class="list-group-item">
+                        <%= data.label %>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</main>
+<%- include('../partials/footer'); %>

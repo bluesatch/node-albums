@@ -22,10 +22,8 @@ const albumDao = {
                     WHEN b.band IS NULL THEN ''
                     ELSE b.band 
                     END band,
-            ar.imgUrl,
             ar.artist_id,
             b.band_id,
-            b.imgUrl,
             l.label_id,
             l.label 
             FROM album al 
@@ -65,10 +63,8 @@ const albumDao = {
                     WHEN b.band IS NULL THEN ''
                     ELSE b.band 
                     END band,
-            ar.imgUrl,
             ar.artist_id,
             b.band_id,
-            b.imgUrl,
             l.label_id,
             l.label 
             FROM album al 

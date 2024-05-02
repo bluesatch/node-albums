@@ -6,7 +6,12 @@
             <% data.forEach(item => { %>
                 <div class="col-md-3">
                     <figure class="figure album-figure">
-                        <img src="/images/<%= item.album_cover %>" alt="image of <%= item.album_cover %>" class="figure-img img-fluid album-cover-img rounded">
+                        <a href="/album/<%= item.album_id %>">
+                            <img 
+                                src="/images/<%= item.album_cover %>" 
+                                alt="image of <%= item.album_cover %>" class="figure-img img-fluid album-cover-img rounded" 
+                            />
+                        </a>
                         <figcaption class="figure-caption">
                             <%= item.title %> | 
                             <% if (item.band == '') { %>

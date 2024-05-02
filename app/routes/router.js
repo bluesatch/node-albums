@@ -78,6 +78,13 @@ tables.forEach(table => {
 //         })
 // })
 
+router.get('/artist/form', (req, res)=> {
+    res.render('pages/artist_form', {
+        title: 'Artist Form',
+        name: 'Artist Form'
+    })
+})
+
 router.get('/artist/:id', (req, res)=> {
     const id = req.params.id
     const url = `http://localhost:${port}/api/artist/${id}`
