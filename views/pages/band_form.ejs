@@ -1,0 +1,36 @@
+<%- include('../partials/header'); %>
+
+<main class="main" id="formMain">
+    <div class="container">
+        <form action="/api/band/create" method="POST">
+            <h2>Add a band</h2>
+            <div class="mb-3">
+                <label for="band" class="form-label">Band</label>
+                <input 
+                    type="text" 
+                    class="form-control" 
+                    name="band" 
+                    id="band" 
+                    value="" 
+                    required 
+                />
+            </div>
+            
+            <div class="mb-3">
+                <label for="imgUrl" class="form-label">Band Image</label>
+                <input 
+                    type="file" 
+                    class="form-control" 
+                    name="imgUrl" 
+                    id="imgUrl" 
+                    value="" 
+                />
+            </div>
+            <div class="mb-3">
+                <input type="submit" value="Add Band">
+            </div>
+        </form>
+    </div>
+</main>
+
+<%- include('../partials/footer'); %>

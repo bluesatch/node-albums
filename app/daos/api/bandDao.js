@@ -36,7 +36,11 @@ const bandDao = {
                 values,
                 (error, dbres)=> {
                     if (!error) {
-                        res.send(`Last id: ${dbres.insertId}`)
+                        // res.send(`Last id: ${dbres.insertId}`)
+                        res.render('pages/confirm_page', {
+                            title: 'Success',
+                            name: 'Success'
+                        })
                     } else {
                         console.log('DAO ERROR: ', error)
                         res.send('Error creating record')

@@ -48,6 +48,21 @@ tables.forEach(table => {
                 })
             })
     })
+
+    router.get(`/${table}/sort`, (req, res)=> {
+        const url = `http://localhost:${port}/api/${table}/sort`
+
+        fetch(url)
+            .then(res => res.json())
+            .then(data => {
+                res.render(`pages/${table}`, {
+                    title: `All ${table}s`,
+                    name: `All ${table}s`,
+                    data
+                })
+            })
+
+    })
 })
 
 // router.get('/artist', (req, res)=> {
@@ -100,6 +115,13 @@ router.get('/artist/:id', (req, res)=> {
                 data
             })
         })
+})
+
+router.get('/band/form', (req, res)=> {
+    res.render('pages/band_form', {
+        title: 'Band Form',
+        name: 'Band Form'
+    })
 })
 
 router.get('/band/:id', (req, res)=> {
